@@ -33,7 +33,9 @@ yargs(hideBin(process.argv))
         type: "string",
       });
     },
-    commitRepo
+    (argv) => {
+      commitRepo(argv.message);
+    }
   )
   .command("push", "Push changes to the remote repository", {}, pushRepo)
   .command("pull", "Pull changes from the remote repository", {}, pullRepo)
