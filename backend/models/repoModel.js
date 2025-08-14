@@ -28,10 +28,10 @@ const RepositorySchema = new Schema ({
         {
             type: Schema.Types.ObjectId,
             ref: "Issue"
-        }
-    ]
+        },
+    ],
 
 });
 
 const Repository = mongoose.model("Repository", RepositorySchema);
-export default Repository
+module.exports = Repository;    
