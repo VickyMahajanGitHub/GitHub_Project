@@ -67,7 +67,7 @@ async function signup(req, res) {
       { expiresIn: "1h" }
     );
 
-    res.status(201).json({ token });
+    res.status(201).json({ token, userId: result.insertedId});
   } catch (error) {
     console.error("Signup error:", error);
     res.status(500).json({ message: "Internal server error" });
