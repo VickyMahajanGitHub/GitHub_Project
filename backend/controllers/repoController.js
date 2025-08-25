@@ -96,21 +96,20 @@ const fetchedRepositoryByName = async (req, res) => {
 
 // Current user repositories
 const fetchedCurrentUserRepositories = async (req, res) => {
-  const userID = req.user;
+  const userID = req.params.userId;
   try {
     const repositories = await Repository.find({ Owner: userID })
       .populate("Owner")
       .populate("issues");
-    res.status(200).json(repositories);
 
     if (!repositories || repositories.length == 0) {
       return res.status(404).json({ error: "User Repositories not found!" });
     }
 
-    res.json({ message: "Repositories found", repositories });
+    return res.status(200).json({ message: "Repositories found", repositories });
   } catch (error) {
     console.error("Error fetching current user repositories:", error);
-    res.status(500).send("Internal Server Error");
+    return res.status(500).send("Internal Server Error");
   }
 };
 

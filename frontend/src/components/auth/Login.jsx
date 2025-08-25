@@ -10,12 +10,7 @@ import logo from "../../assets/github-mark-white.svg";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-    // useEffect(() => {
-    //   localStorage.removeItem("token");
-    //   localStorage.removeItem("userId");
-    //   setCurrentUser(null);
-    // });
-
+  
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
