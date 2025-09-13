@@ -4,7 +4,7 @@
   "description": "GitHub Project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js start"
   },
   "author": "Vicky Mahajan",
   "license": "ISC",
