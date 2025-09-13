@@ -7,9 +7,6 @@ const Issue = require("../models/issueModel");
 
 const createRepository = async (req, res) => {
   const { userId, name, issues, description, content, visibility } = req.body;
-  console.log("Received body:", req.body);
-
-
   try {
     if (!name) {
       return res.status(400).json("Repository name is required");
@@ -108,7 +105,9 @@ const fetchedCurrentUserRepositories = async (req, res) => {
       return res.status(404).json({ error: "User Repositories not found!" });
     }
 
-    return res.status(200).json({ message: "Repositories found", repositories });
+    return res
+      .status(200)
+      .json({ message: "Repositories found", repositories });
   } catch (error) {
     console.error("Error fetching current user repositories:", error);
     return res.status(500).send("Internal Server Error");
