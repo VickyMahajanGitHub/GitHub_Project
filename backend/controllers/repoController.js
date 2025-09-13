@@ -25,7 +25,7 @@ const createRepository = async (req, res) => {
       description,
       content,
       visibility,
-      Owner: userId,
+      owner: userId,
       issues,
     });
 
@@ -36,8 +36,8 @@ const createRepository = async (req, res) => {
       repositoryID: result._id,
     });
 
-    await newRepository.save();
-    res.status(201).json("Repository created!");
+    // await newRepository.save();
+    // res.status(201).json("Repository created!");
   } catch (error) {
     console.error("Error creating repository:", error);
     res.status(500).send("Internal Server Error");
