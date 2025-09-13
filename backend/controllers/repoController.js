@@ -7,6 +7,8 @@ const Issue = require("../models/issueModel");
 
 const createRepository = async (req, res) => {
   const { userId, name, issues, description, content, visibility } = req.body;
+  console.log("Received body:", req.body);
+
 
   try {
     if (!name) {
