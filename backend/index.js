@@ -71,7 +71,7 @@ yargs(hideBin(process.argv))
 
 function startServer() {
   const app = express();
-  const port = process.env.PORT || 5000;
+  const port = process.env.PORT || 8080;
 
   app.use(bodyParser.json());
   app.use(express.json());
