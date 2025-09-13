@@ -25,7 +25,7 @@ const Dashboard = () => {
 
         const fetchSuggestedRepositories = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/repo/all`);
+                const response = await fetch(`https://githubproject-production.up.railway.app/repo/all`);
                 const data = await response.json();
                 // console.log("Suggested Repositories:", data);
                 setSuggestedRepositories(data);

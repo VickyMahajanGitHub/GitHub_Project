@@ -30,7 +30,7 @@ const Signup = () => {
 
         try {
             setLoading(true);
-            const res = await axios.post("http://localhost:5000/users/signup", {
+            const res = await axios.post("https://githubproject-production.up.railway.app/users/signup", {
                 email: email,
                 password: password,
                 username: username,

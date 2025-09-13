@@ -20,7 +20,7 @@ const Profile = () => {
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:5000/users/getUserProfile/${userId}`
+            `https://githubproject-production.up.railway.app/users/getUserProfile/${userId}`
           );
           setUserDetails(response.data);
         } catch (err) {
